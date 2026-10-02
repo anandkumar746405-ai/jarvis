@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JARVIS</title>
+<meta name="theme-color" content="#050b14">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="logo"><span class="ring"></span><h1>J.A.R.V.I.S</h1></div>
+    <div class="head-btns">
+      <button id="speakToggle" class="small" title="Jawab bol ke sunao">🔊 Voice: ON</button>
+      <button id="settingsBtn" class="small">⚙ Settings</button>
+      <button id="clearBtn" class="small">🗑 Clear</button>
+    </div>
+  </header>
+
+  <main id="chat" aria-live="polite"></main>
+
+  <div id="status"></div>
+
+  <footer>
+    <button id="micBtn" class="mic" title="Bolke poocho">🎤</button>
+    <input id="input" type="text" placeholder="Kuch bhi poocho... (type karo ya mic dabao)" autocomplete="off">
+    <button id="sendBtn" class="send">Send</button>
+  </footer>
+</div>
+
+<div id="modal" class="modal hidden">
+  <div class="card">
+    <h2>Settings</h2>
+    <label>Gemini API Key
+      <input id="keyInput" type="password" placeholder="AIza..." autocomplete="off">
+    </label>
+    <p class="hint">Key sirf tumhare browser me save hoti hai. Kahin upload nahi hoti (Google ko chhodke, jab sawal bhejte ho).</p>
+    <label>Model
+      <input id="modelInput" type="text" placeholder="gemini-2.5-flash">
+    </label>
+    <label>Bolne ki bhasha (mic)
+      <select id="langSelect">
+        <option value="hi-IN">Hindi / Hinglish (hi-IN)</option>
+        <option value="en-IN">English (India)</option>
+        <option value="en-US">English (US)</option>
+      </select>
+    </label>
+    <div class="row">
+      <button id="saveBtn" class="send">Save</button>
+      <button id="closeBtn" class="small">Close</button>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
